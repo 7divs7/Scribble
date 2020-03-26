@@ -8,12 +8,22 @@
 # Scribble
 A simple digit recognizer using pygame in which you can draw the digits and recognize it straight away using our own CNN model.
 
+## Cloning
+```bash
+$ git clone https://github.com/7divs7/Scribble.git
+```
+
 ## Dependencies
 ```bash
 $ pip3 install -r requirements.txt
 ```
 
 ## Instructions
+To train the CNN model:
+```bash
+$ python3 train_digit.py
+```
+To try out the code run:
 ```bash
 $ python3 Scribble/scribble_main.py
 ```
