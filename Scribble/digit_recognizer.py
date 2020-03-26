@@ -1,17 +1,12 @@
 import pygame
-import time
+import recog as rec
 
 
 def init_screen(win):
     win.fill((255,255,255))
    
-    text1 = 'CLEAR'
-    text2 = 'CHECK'
-    
-    x = False
-
-    button(win, text1, 90, 650, (0,0,255))
-    button(win, text2, 290, 650, (0,0,255))
+    button(win, 'CLEAR', 90, 650, (0,0,255))
+    button(win, 'CHECK', 290, 650, (0,0,255))
 
     pygame.draw.line(win,(255,0,0),(0,590),(700,590),5)     
 
@@ -48,7 +43,7 @@ def main():
 
 def drawP(win,brush):
     x,y = pygame.mouse.get_pos()
-    print(x,y)
+    #print(x,y)
     if(y>=0 and y<=540):
         win.blit(brush,(x-50,y-50))
     elif(x>=30 and x<=150 and y>=630 and y<=670):
@@ -56,13 +51,11 @@ def drawP(win,brush):
         button(win, 'screen cleared', 450, 650, (0,0,255))
         init_screen(win)
     elif(x>=230 and x<=350 and y>=630 and y<=670):
-        button_click(win,290,650,'CHECK')
-        #take screenshot 
+        button_click(win,290,650,'CHECK') 
         img = take_ss(win)
-        #call the digit checker
-            #input:ss
-            #output:text
-        button(win, 'Number drawn', 530, 650, (0,0,255))
+        inp = rec.test()
+        st = 'Number: '+ inp
+        button(win, st, 530, 650, (0,0,255))
 
         
        
@@ -79,10 +72,13 @@ def button_click(win,x,y,text):
     button(win, text, x, y, (255,0,0))
 
 def take_ss(win):
-    save_file = "/Users/divyani/Desktop/CODESS/number_input.png"
+    save_file = "/Users/divyani/Desktop/CODESS/Scribble/number_input.png"
     rect = pygame.Rect(0, 0, 700, 540)
     sub = win.subsurface(rect)
     pygame.image.save(sub, save_file)
+    pic = pygame.image.load(save_file)
+    pic = pygame.transform.scale(pic, (28, 28))
+    pygame.image.save(pic, save_file)
     return save_file
 
 
