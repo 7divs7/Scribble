@@ -8,15 +8,20 @@
 # Scribble
 A simple digit recognizer using pygame in which you can draw the digits and recognize it straight away using our own CNN model.
 
-# Dependencies
+## Dependencies
 ```bash
 $ pip3 install -r requirements.txt
 ```
 
-# Instructions
+## Instructions
 ```bash
 $ python3 Scribble/scribble_main.py
 ```
 
-# Output
+## Output
+![Alt Text](https://github.com/7divs7/Scribble/blob/master/Scribble/scribbleG.gif)
+
+## Author
+[![LinkedIn-profile](https://img.shields.io/badge/LinkedIn-Profile-teal.svg)](https://www.linkedin.com/in/divyani-panda-5a8345194/)
+* [*Divyani Panda*](https://github.com/7divs7)
 
