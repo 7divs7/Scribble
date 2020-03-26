@@ -1,5 +1,5 @@
 import pygame
-import recog as rec
+import recog_digit as rec
 
 
 def init_screen(win):
